@@ -2,10 +2,12 @@ import React from "react";
 import Cover from "../assets/react.svg";
 import "./SingleCard.css";
 
-const SingleCard = ({ card, handleChoice, isFlipped }) => {
+const SingleCard = ({ card, handleChoice, isFlipped, isDisabled }) => {
   const handleClick = () => {
-    handleChoice(card);
-    console.log(isFlipped);
+    if (!isDisabled) {
+      handleChoice(card);
+      console.log(isFlipped);
+    }
   };
 
   return (
